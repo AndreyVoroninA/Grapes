@@ -2,6 +2,8 @@
    background-color: #A5C05B;
    width: 100%;
    height: 60px;
+   position: sticky;
+   top: 0px;
  }
  .panel {
     max-width: 1200px;
