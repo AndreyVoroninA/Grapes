@@ -1,0 +1,28 @@
+.navb {
+   background-color: #A5C05B;
+   width: 100%;
+   height: 60px;
+ }
+ .panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+ }
+ .item {
+    margin-top: 15px;
+    font-size: 18px;
+ }
+ .item a{
+    text-decoration: none;
+    color: white;
+    transition: 0.2s linear;
+ }
+ .item a:hover {
+    color: rgb(148, 146, 146);
+    transition: 0.2s linear;
+ }
+ .item .active {
+    color: #353534;
+ }
+ 

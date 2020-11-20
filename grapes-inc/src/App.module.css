@@ -1,0 +1,11 @@
+.app{
+  background-color: #DDDEDE;
+  height: 100vh;
+  color: white;
+  font-family: 'Hind', sans-serif;
+}
+.main_content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: rgb(39, 38, 38);
+}
