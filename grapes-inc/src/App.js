@@ -3,6 +3,7 @@ import style from './App.module.css';
 import Header from './components/Header/Header';
 import Homepage from './components/HomePage/HomePage';
 import Navbar from './components/NavBar/Navbar';
+import Users from './components/Users/Users';
 
 const App = (props) => {
   return(
@@ -12,7 +13,7 @@ const App = (props) => {
       <Navbar />
       <div className={style.main_content}>
         <Route path="/home" render={() => <Homepage />}/>
-        <Route path="/users" render={() => <div>Подгрузка пользователей</div>}/>
+        <Route path="/users" render={() => <Users />}/>
         <Route path="/projects" render={() => <div>Подгрузка проектов</div>}/>
         <Route path="/planning" render={() => <div>Подгрузка планирования</div>} />
         <Route path="/schedule" render={() => <div>Подгрузка график и контроль</div>}/>
