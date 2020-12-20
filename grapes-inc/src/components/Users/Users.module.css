@@ -7,25 +7,98 @@
 
 .usersForm input {
    width: 300px;
-   height: 40px;
-   margin: 10px;
-   border-radius: 10px;
-   border: 1px solid #232122;
-   outline: none;
+   height: 30px;
+   margin: 10px 10px;
 }
 
 .usersForm button {
    width: 150px;
-   height: 40px;
-   background-color: white;
-   color:yellowgreen;
+   height: 30px; 
    font-size: 16px;
    font-weight: 600;
+}
+input {
+   border-radius: 10px;
+   border: 1px solid #232122;
    outline: none;
+}
+button {
+   background-color: white;
+   color:yellowgreen;
    border: 1px solid #232122;
    border-radius: 15px;
+   outline: none;
+}
+button:hover {
+   background-color: #232122;
+}
+/*card*/
+.card {
+   width: 300px;
+   border: 1px solid #232122;
+   border-radius: 30px;
+   margin: 10px 0px;
+   padding: 0px 30px;
+}
+.card input{
+  width: 300px;
 }
 
-.usersForm button:hover {
-   background-color: #232122;
+.nameUser {
+   font-size: 20px;
+   font-weight: bold ;
+}
+.pos {
+font-size: 16px;
+}
+.newuseradd {
+   font-size: 30px;
+}
+.add {
+   font-size: 20px;
+   font-weight: 600;
+   margin-top: 10px;
+}
+.hr {
+   border: none;
+   background-color: yellowgreen;
+   color: yellowgreen;
+   height: 0.7px;
+}
+.posit {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 5px;
+}
+
+.posit input {
+   width: 60px;
+   margin: 0px 15px;
+}
+.posit button {
+   margin: 0px -10px;
+}
+.posit div {
+   display: flex;
+   justify-content: space-between;
+}
+/*.posit span, input, button {
+  margin: 0px 10px;
+}*/
+.namebut {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 5px;
+}
+/*propgers*/
+.progers{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.deleteUs {
+   width: 150px;
+   height: 20px;
+   color: rgb(224, 125, 43);
 }
