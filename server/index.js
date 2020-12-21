@@ -21,14 +21,14 @@ app.use(bodyParser.urlencoded({extended: true}))
    })
 })*/
 
-app.get('/api/get', (req,res) => {
+app.get('/api/get/users', (req,res) => {
    const sqlSelect = "SELECT * FROM coders";
    pool.query(sqlSelect, (err, result) => {
      res.send(result);
    })
 })
 
-app.post('/api/insert', (req, res) => {
+app.post('/api/insert/users', (req, res) => {
 
    const nameUser = req.body.FIO
    const pos = req.body.position
@@ -39,7 +39,7 @@ app.post('/api/insert', (req, res) => {
    })
 })
 
-app.delete('/api/delete/:FIO', (req, res)=> {
+app.delete('/api/delete/users/:FIO', (req, res)=> {
    const name = req.params.FIO;
    const sqlDelete = "DELETE FROM coders WHERE FIO = ?";
    pool.query(sqlDelete, name, (err,result) => {
@@ -47,7 +47,7 @@ app.delete('/api/delete/:FIO', (req, res)=> {
    })
 })
 /* PUT */
-app.put("/api/update/pos", (req, res) => {
+app.put("/api/update/users/position", (req, res) => {
    const name = req.body.FIO;
    const posit = req.body.position;
    const sqlUpdate = "UPDATE coders SET position = ? WHERE FIO = ?";
@@ -56,7 +56,7 @@ app.put("/api/update/pos", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/rat", (req, res) => {
+app.put("/api/update/users/rating", (req, res) => {
    const name = req.body.FIO;
    const ratin = req.body.rating;
    const sqlUpdate = "UPDATE coders SET rating = ? WHERE FIO = ?";
@@ -65,7 +65,7 @@ app.put("/api/update/rat", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/front", (req, res) => {
+app.put("/api/update/users/frontend", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.frontend;
    const sqlUpdate = "UPDATE coders SET frontend = ? WHERE FIO = ?";
@@ -74,7 +74,7 @@ app.put("/api/update/front", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/back", (req, res) => {
+app.put("/api/update/users/backend", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.backend;
    const sqlUpdate = "UPDATE coders SET backend = ? WHERE FIO = ?";
@@ -83,7 +83,7 @@ app.put("/api/update/back", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/design", (req, res) => {
+app.put("/api/update/users/design", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.design;
    const sqlUpdate = "UPDATE coders SET design = ? WHERE FIO = ?";
@@ -92,7 +92,7 @@ app.put("/api/update/design", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/diftask", (req, res) => {
+app.put("/api/update/users/diftask", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.difficultTask;
    const sqlUpdate = "UPDATE coders SET difficultTask = ? WHERE FIO = ?";
@@ -101,7 +101,7 @@ app.put("/api/update/diftask", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/average", (req, res) => {
+app.put("/api/update/users/average", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.averageTask;
    const sqlUpdate = "UPDATE coders SET averageTask = ? WHERE FIO = ?";
@@ -110,7 +110,7 @@ app.put("/api/update/average", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/esaytask", (req, res) => {
+app.put("/api/update/users/esaytask", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.easyTask;
    const sqlUpdate = "UPDATE coders SET easyTask = ? WHERE FIO = ?";
@@ -119,7 +119,7 @@ app.put("/api/update/esaytask", (req, res) => {
       if (err) console.log(err);
    })
 })
-app.put("/api/update/lateness", (req, res) => {
+app.put("/api/update/users/lateness", (req, res) => {
    const name = req.body.FIO;
    const fr = req.body.lateness;
    const sqlUpdate = "UPDATE coders SET lateness = ? WHERE FIO = ?";
@@ -137,6 +137,40 @@ app.post('/api/post/project', (req, res) => {
    const sqlInsert = "INSERT INTO projects (nameProjects, deadlineProject) VALUES (?,?)"
    pool.query(sqlInsert, [nameProject, deadline], (err, result) => {
       console.log(result);
+   })
+})
+
+app.get('/api/get/projects', (req,res) => {
+
+   const sqlSelect = "SELECT * FROM projects";
+   pool.query(sqlSelect, (err, result) => {
+     res.send(result);
+   })
+})
+
+/* Задачи*/
+app.post('/api/post/tasks', (req, res) => {
+
+   const nameTask = req.body.nameTask;
+   const complexity = req.body.complexity;
+   const performers = req.body.performers;
+   const reqKnowlege = req.body.requiredKnowlege;
+   const deadlineTask = req.body.deadkineTask;
+   const curator = req.body.curator;
+   const idProject = req.body.idProjects
+
+   const sqlInsert = "INSERT INTO tasks (nameTask, complexity, performers, requiredKnowlege, deadkineTask, curator, idProjects) VALUES (?,?,?,?,?,?,?)"
+   pool.query(sqlInsert, [nameTask, complexity, performers, reqKnowlege, deadlineTask, curator, idProject], (err, result) => {
+      console.log(result);
+   })
+})
+
+app.get('/api/get/tasks/:idProjects', (req,res) => {
+
+   const idP = req.params.idProjects
+   const sqlSelect = "SELECT * FROM tasks WHERE idProjects = ?";
+   pool.query(sqlSelect, idP, (err, result) => {
+     res.send(result);
    })
 })
 

@@ -23,7 +23,9 @@
 }
 .logo {
    font-size: 20px;
-   font-weight: bold ;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
 }
 input {
    border-radius: 10px;
@@ -39,4 +41,24 @@ button {
 }
 button:hover {
    background-color: #232122;
+}
+.listProjects{
+ margin-top: 25px;
+}
+
+.item {
+   margin-top: 15px;
+   font-size: 18px;
+}
+.item a{
+   text-decoration: none;
+   color:yellowgreen;
+   transition: 0.2s linear;
+}
+.item a:hover {
+   color: rgb(148, 146, 146);
+   transition: 0.2s linear;
+}
+.item .active {
+   color: #353534;
 }
